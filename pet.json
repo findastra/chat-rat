@@ -1,0 +1,17 @@
+{
+  "pet": "Chat Rat",
+  "kind": "pet-app",
+  "owner": "Astra",
+  "sprite": "sprite-20261009.json",
+  "icon": "icon-20261009.png",
+  "asset_date": "20261009",
+  "job": "Files every chat Astra has with Claude or OpenAI into one shared folder, with an index every assistant can read.",
+  "runs_on": "Windows, Node 20+ (planned).",
+  "entry": "chat-rat-20261009.html",
+  "status": "hatching",
+  "visibility": "private",
+  "implementation_status": "Seeded: draft pet art, app icon and the build plan (handoffs/001). No app yet.",
+  "cage": { "topic": "pet-app", "home": "README.md", "repository": "https://github.com/findastra/astras-pet-apps" },
+  "built_with": "Claude Opus 5.5 (claude-opus-5-5), 2026-10-09: repo, plan, pet art and app icon",
+  "updated": "2026-10-09"
+}

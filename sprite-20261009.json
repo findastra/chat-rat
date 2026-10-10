@@ -1,0 +1,42 @@
+{
+  "id": "chat-rat",
+  "pet": "Chat Rat",
+  "format": "png-mood-frames",
+  "size": [
+    256,
+    256
+  ],
+  "moods": [
+    "idle",
+    "blink",
+    "happy",
+    "curious",
+    "worried",
+    "sad",
+    "sick",
+    "alarmed",
+    "sleep"
+  ],
+  "frames": {
+    "idle": "art/idle-20261009.png",
+    "blink": "art/blink-20261009.png",
+    "happy": "art/happy-20261009.png",
+    "curious": "art/curious-20261009.png",
+    "worried": "art/worried-20261009.png",
+    "sad": "art/sad-20261009.png",
+    "sick": "art/sick-20261009.png",
+    "alarmed": "art/alarmed-20261009.png",
+    "sleep": "art/sleep-20261009.png"
+  },
+  "icon": {
+    "png": "icon-20261009.png",
+    "ico": "icon-20261009.ico"
+  },
+  "source": {
+    "sheet": "art/mood-sheet-20261009.png",
+    "generator": "astras-pet-apps scripts/generate-pets.mjs + build-frames.mjs (origin/main 329c100), gpt-image-2 via image-bridge",
+    "made_on": "2026-10-09",
+    "note": "DRAFT until Astra approves. Neon electric-aqua rat, hot coral ears/nose/paws/tail, cream scroll with coral ribbon.",
+    "prompt_line": "{ id: 'chat-rat', what: 'a small round friendly RAT sitting upright and seen face on, with big round ears, a pointed snout with a little round nose and whiskers, tiny paws holding a small rolled-up paper scroll against its chest, and a long thin curling tail, no lettering', colours: 'vivid neon electric-aqua cyan fur, hot coral-pink inner ears and nose and paws and tail, cream-white scroll with a thin coral ribbon, white whiskers' },"
+  }
+}
