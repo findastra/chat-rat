@@ -4,19 +4,20 @@
   "assistant": "OpenAI Codex (GPT-6)",
   "date": "2026-10-11",
   "status": "draft",
-  "desktop_scale": 1,
+  "desktop_scale": 0.9,
   "sparkles": false,
   "renderer": "astras-pet-apps/scripts/desktop-pets-20261011.cs",
   "art_files": [
-    "desktop-art/chat-rat/idle-20261011.png",
+    "desktop-art/chat-rat/alarmed-20261011.png",
     "desktop-art/chat-rat/blink-20261011.png",
-    "desktop-art/chat-rat/happy-20261011.png",
     "desktop-art/chat-rat/curious-20261011.png",
-    "desktop-art/chat-rat/worried-20261011.png",
+    "desktop-art/chat-rat/happy-20261011.png",
+    "desktop-art/chat-rat/idle-20261011.png",
     "desktop-art/chat-rat/sad-20261011.png",
     "desktop-art/chat-rat/sick-20261011.png",
-    "desktop-art/chat-rat/alarmed-20261011.png",
-    "desktop-art/chat-rat/sleep-20261011.png"
+    "desktop-art/chat-rat/sleep-20261011.png",
+    "desktop-art/chat-rat/worried-20261011.png"
   ],
-  "notes": "Light gray rat, no accessories."
+  "notes": "Smaller light gray rat without accessories.",
+  "source_sheet": "desktop-art/chat-rat/sheet-20261011.png"
 }
