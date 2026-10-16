@@ -3,7 +3,7 @@
   "kind": "pet-app",
   "owner": "Astra",
   "sprite": "sprite-20261009.json",
-  "icon": "icon-20261009.png",
+  "icon": "desktop-art/chat-rat/idle-20261011.png",
   "asset_date": "20261009",
   "job": "Saves local AI conversations and imported exports by recorded model and YYYYMMDD, with direct folder buttons.",
   "runs_on": "Windows, Node.js 20+",
@@ -38,5 +38,13 @@
       "entry": "chat-rat-20261016.mjs",
       "skill": "skills/save-chats/SKILL.md"
     }
-  ]
+  ],
+  "ui": {
+    "cyberhome": "pet-program-cyberhome",
+    "cyberdeck": "pet-program-cyberdeck",
+    "launcher": "circle-arrow-right",
+    "character": "desktop-art/chat-rat/idle-20261011.png",
+    "chat_shell": "phone-shell-20261016.css",
+    "chat_connection": "disconnected"
+  }
 }

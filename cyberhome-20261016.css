@@ -1,0 +1,25 @@
+/* Chat Rat cyberhome. By Astra. The character art remains the existing approved asset. */
+:root{--home-ink:#284b42;--paper:#fffdf5;--border:#51776d}
+main{padding-bottom:100px}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #7155a0;outline-offset:4px}
+.home-layout{display:grid;grid-template-columns:minmax(0,520px) minmax(260px,1fr);gap:26px;align-items:center;margin:26px 0 30px}
+.cyberhome-frame,.home-card{min-width:0;margin:0;border:2px solid var(--border);border-radius:28px;background:var(--paper);padding:14px;box-shadow:3px 4px 0 #d0dfd5}
+legend{max-width:calc(100% - 16px);overflow-wrap:anywhere;border:1px solid var(--border);background:var(--paper);border-radius:14px;padding:5px 14px;font-weight:700;font-size:15px}
+#pet-program-cyberhome{position:relative;width:100%;aspect-ratio:1;overflow:hidden;isolation:isolate;border:3px solid var(--home-ink);border-radius:22px;background:#d9f4e9;box-shadow:inset 0 0 30px #618c6b33;touch-action:pan-y}
+.garden{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#home-rat{position:absolute;left:0;top:0;width:clamp(76px,26%,132px);aspect-ratio:1;will-change:transform;pointer-events:none;z-index:3;filter:drop-shadow(0 9px 5px #25483130)}
+#home-rat img{display:block;width:100%;height:100%;object-fit:contain;user-select:none}
+#home-toy{position:absolute;left:67%;top:64%;width:42px;height:42px;padding:0;border:0;background:none;z-index:4;border-radius:50%;box-shadow:0 5px 4px #284b4226}
+#home-toy svg{display:block;width:100%;height:100%}#home-toy:hover{background:#fff6ce55}
+.habitat-name{position:absolute;bottom:12px;left:12px;right:12px;width:max-content;max-width:calc(100% - 24px);font-size:12px;font-weight:650;background:#fffdf5ed;border:1px solid var(--border);border-radius:12px;padding:5px 10px;z-index:5;pointer-events:none}
+.home-side{display:grid;gap:22px}.home-card{padding:14px 20px 20px}.home-card p{background:#f0f5e9;border:1px solid #d7e1d0;border-radius:13px;padding:10px 12px}.home-card .row{padding:5px 0}
+.panel{position:relative;margin-top:30px;padding-top:22px}.panel>h2{position:relative;display:table;margin:-39px 0 16px;background:var(--paper);border:1px solid var(--border);border-radius:14px;padding:5px 12px;max-width:100%}
+.panel:has(#save){padding-top:14px}.panel:has(#save) h2{display:table;background:var(--paper);border:1px solid var(--border);border-radius:14px;padding:5px 12px;margin-top:-30px;font-size:17px}
+.panel:has(#save) .lights{flex:none;gap:6px}.panel:has(#save) .row:first-child{align-items:center;gap:14px}
+footer{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;border-radius:0;line-height:1.8;margin:30px 0 0;padding:20px;background:var(--paper);border-block:1px solid #8ba49a}
+#cyberdeck-launcher{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:40;display:grid;place-items:center;width:62px;height:62px;padding:3px;border:2px solid var(--home-ink);border-radius:50%;background:#fffdf5;box-shadow:2px 4px 0 #284b4226;cursor:pointer}
+#cyberdeck-launcher svg{width:48px;height:48px;fill:none;stroke:var(--home-ink);stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}#cyberdeck-launcher:hover{background:#cbefdf}
+#cyber-deck.astra-phone{overflow:visible!important}#cyber-deck .deck-identity{display:flex;gap:12px;align-items:center;border:2px solid #1f2b0e;border-radius:14px;background:#d9e6b4;padding:10px}
+#cyber-deck .deck-identity img{width:80px;height:80px;object-fit:contain;flex:none}#cyber-deck .deck-identity p{font-size:13px;margin:5px 0}#cyber-deck .deck-label{font-size:12px;background:#d9e6b4;border:1px solid #7d8f55;border-radius:10px;padding:8px}
+@media(max-width:780px){.home-layout{grid-template-columns:minmax(0,520px);justify-content:center;gap:20px}.home-side{grid-template-columns:1fr 1fr;gap:14px}.home-card{padding:10px 14px 14px}.panel>h2{font-size:17px}.panel:has(#save) .row:first-child{align-items:flex-start}.panel:has(#save) h2{margin-top:0}}
+@media(max-width:480px){.home-side{grid-template-columns:1fr}.cyberhome-frame{padding:9px;border-radius:24px}legend{font-size:12px}.home-layout{margin-top:18px}#cyberdeck-launcher{width:56px;height:56px;right:16px;bottom:16px}#cyber-deck.astra-phone{right:16px!important;bottom:16px!important}.panel>h2{margin-top:-32px}#home-toy{width:34px;height:34px}}
+@media(prefers-reduced-motion:reduce){#home-rat{will-change:auto}*{scroll-behavior:auto!important}}

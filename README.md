@@ -22,6 +22,14 @@ See [the saving skill](skills/save-chats/SKILL.md) and [conversation import form
 
 ## Limits
 
+## Cyberhome and cyberdeck
+
+The large square `pet-program-cyberhome` contains Chat Rat's existing desktop artwork in a virtual garden. It explores when the page opens, follows pointer movement inside its home, and chases the play ball. Pause/resume and reduced-motion preferences are respected; movement stops when the page is hidden. This is local play animation, separate from agent activity and archive status.
+
+The bottom-right circle-arrow opens `pet-program-cyberdeck`. Its current appearance reuses the shared Data Dealer/Chip yellow phone CSS with a green LCD and black outline. Chat remains disconnected; the panel links to the working local saver and back to the cyberhome. The page favicon, habitat character and phone identity use the same existing rat artwork. Native desktop behavior is unchanged.
+
+## Limits
+
 - Web-only chats require an export; no browser account scraping or new account connection is installed. ZIP imports read `conversations.json` directly; encrypted, ZIP64 and oversized ZIP entries require extraction first.
 - Archive scope is user/assistant text and provenance. Internal reasoning, tool output, attachment binaries and audio are not archived. Known API-token patterns are redacted; other sensitive text may remain, so keep the library private.
 - Pet Program exports preserve pet name, model and harness session; live chatbot wiring is future work. The shared L3 activity component defaults to disconnected. No AI seat, cloud API, core security grant, weekly backlog runner, schedule or native desktop click action is installed.

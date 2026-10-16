@@ -110,6 +110,7 @@ export async function startServer(cfg=settings(),port=43127) {
  try{if(req.headers.host!==`127.0.0.1:${port}`)return send(403,{error:'Local host required.'});const url=new URL(req.url,origin);
   if(req.method==='GET'&&url.pathname==='/'){return send(200,(await fs.readFile(path.join(ROOT,'chat-rat-20261016.html'),'utf8')).replace('__TOKEN__',token),'text/html; charset=utf-8');}
   if(req.method==='GET'&&url.pathname==='/pet.png')return send(200,await fs.readFile(path.join(ROOT,'desktop-art','chat-rat','idle-20261011.png')),'image/png');
+  if(req.method==='GET'&&['/cyberhome-20261016.css','/phone-shell-20261016.css','/cyberhome-20261016.js'].includes(url.pathname))return send(200,await fs.readFile(path.join(ROOT,url.pathname.slice(1))),url.pathname.endsWith('.js')?'text/javascript; charset=utf-8':'text/css; charset=utf-8');
   if(req.headers['x-chat-rat-token']!==token|| (req.headers.origin&&req.headers.origin!==origin))return send(403,{error:'Open Chat Rat locally to use this action.'});
   if(req.method==='GET'&&url.pathname==='/api/status'){const data=await json(path.join(cfg.library,`chat-index-${CONTROL}.json`),{chats:[],report:null});return send(200,{...data,library:cfg.library,busy,enabled});}
   if(req.method==='GET'&&url.pathname==='/api/chat'){const state=await json(path.join(cfg.library,`chat-index-${CONTROL}.json`),{chats:[]});const chat=state.chats.find(c=>c.id===url.searchParams.get('id'));if(!chat)return send(404,{error:'Unknown chat.'});return send(200,{text:await fs.readFile(path.join(cfg.library,chat.files[0]),'utf8')});}
