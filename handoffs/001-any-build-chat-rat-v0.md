@@ -1,9 +1,11 @@
-status: open
+status: partial (requested local archive scope implemented 2026-10-16; original API page editor deferred)
 for: any
 from: Claude Opus 5.5 (claude-opus-5-5), 2026-10-09
 needs: README.md, pet.json, sprite-20261009.json
 ---
 ## Task
+Update 2026-10-16: Astra requested a clickable missing-chat saver, direct local model folders, YYYYMMDD organization, and eventual Pet Program harness chats. That scope is implemented in `chat-rat-20261016.mjs` and its dashboard. See README and `conversation-import-20261016.md`. The original API-powered page editor below was not requested in this session and remains unbuilt. No core/harness integration is claimed.
+
 Build Chat Rat v0: one Node script (built-ins only) plus its app. Facts checked on Astra's PC on 2026-10-09:
 
 **Sources**
