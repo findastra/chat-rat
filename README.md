@@ -20,7 +20,9 @@ Repeated runs skip unchanged source files, refresh changed sources, and recreate
 
 See [the saving skill](skills/save-chats/SKILL.md) and [conversation import format](conversation-import-20261016.md). Tests: `node --test test-chat-rat-20261016.mjs`.
 
-## Limits
+## Ask Chat Rat
+
+Other assistants ask Chat Rat instead of searching the archive themselves: `node chat-rat-20261016.mjs ask "your question" --also "extra words"`. It saves missing chats first, answers from a word index of every chat, and quotes the best matches. Each question gets a search tool, saved in the library's `tools/` folder. A later question on the same topic reuses that tool and adds to it, and the index rebuilds only changed chats, so repeat questions answer in milliseconds. While the dashboard runs, the same query is `GET /api/query`. See [the asking skill](skills/ask-chat-rat/SKILL.md). Tests: `node --test test-chat-rat-20261016.mjs test-chat-rat-query-20261017.mjs`.
 
 ## Cyberhome and cyberdeck
 
