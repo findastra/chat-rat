@@ -39,3 +39,7 @@ The bottom-right circle-arrow opens `pet-program-cyberdeck`. Its current appeara
 Built with OpenAI Codex (GPT-6), 20261016. Public credit: Astra.
 
 Desktop appearance draft updated 2026-10-11: see [desktop details](desktop-pet-20261011.json). This changes the desktop pet, not application features.
+
+## Missed search (2026-10-16)
+
+Chat Rat also reads the saved chats for things that were never recorded: pets, tools, repos, naming decisions, rounds that stopped part way, and unmerged work. Run `node missed-search-20261016.mjs`, or triple-click Chat Rat once the desktop binding is built. Details: [skills/missed-search/SKILL.md](skills/missed-search/SKILL.md). It is read-only. Tests: `node --test test-missed-search-20261016.mjs`.

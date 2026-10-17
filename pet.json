@@ -37,6 +37,73 @@
       "visibility": "private",
       "entry": "chat-rat-20261016.mjs",
       "skill": "skills/save-chats/SKILL.md"
+    },
+    {
+      "name": "chat-rat-v0.1.0-missed-pets-search-v0.1.0",
+      "intended_use": "Pet names said in chats that are not on The Farm's one list",
+      "visibility": "private",
+      "entry": "missed-search-20261016.mjs",
+      "skill": "skills/missed-search/SKILL.md",
+      "status": "implemented (command line); dashboard button not wired yet",
+      "read_only": true
+    },
+    {
+      "name": "chat-rat-v0.1.0-missed-tools-search-v0.1.0",
+      "intended_use": "Tool names discussed in chats that no pet.json lists",
+      "visibility": "private",
+      "entry": "missed-search-20261016.mjs",
+      "skill": "skills/missed-search/SKILL.md",
+      "status": "implemented (command line); dashboard button not wired yet",
+      "read_only": true
+    },
+    {
+      "name": "chat-rat-v0.1.0-missed-repos-search-v0.1.0",
+      "intended_use": "Repos named in chats that do not exist (often old names)",
+      "visibility": "private",
+      "entry": "missed-search-20261016.mjs",
+      "skill": "skills/missed-search/SKILL.md",
+      "status": "implemented (command line); dashboard button not wired yet",
+      "read_only": true
+    },
+    {
+      "name": "chat-rat-v0.1.0-missed-decisions-search-v0.1.0",
+      "intended_use": "Naming answers Astra gave that were never recorded",
+      "visibility": "private",
+      "entry": "missed-search-20261016.mjs",
+      "skill": "skills/missed-search/SKILL.md",
+      "status": "implemented (command line); dashboard button not wired yet",
+      "read_only": true
+    },
+    {
+      "name": "chat-rat-v0.1.0-unfinished-rounds-search-v0.1.0",
+      "intended_use": "Question rounds that stopped part way, with where they stopped",
+      "visibility": "private",
+      "entry": "missed-search-20261016.mjs",
+      "skill": "skills/missed-search/SKILL.md",
+      "status": "implemented (command line); dashboard button not wired yet",
+      "read_only": true
+    },
+    {
+      "name": "chat-rat-v0.1.0-unpushed-work-search-v0.1.0",
+      "intended_use": "Branches and folders chats said were unmerged or only on the PC",
+      "visibility": "private",
+      "entry": "missed-search-20261016.mjs",
+      "skill": "skills/missed-search/SKILL.md",
+      "status": "implemented (command line); dashboard button not wired yet",
+      "read_only": true
+    },
+    {
+      "name": "chat-rat-v0.1.0-missed-anything-sweep-v0.1.0",
+      "intended_use": "Runs every missed-* tool and writes one dated report into the chat library",
+      "visibility": "private",
+      "entry": "missed-search-20261016.mjs",
+      "skill": "skills/missed-search/SKILL.md",
+      "status": "implemented (command line); dashboard button not wired yet",
+      "read_only": true,
+      "clicker": {
+        "clicks": 3,
+        "note": "Three-click quick tool (Clicker Training). Native binding pending."
+      }
     }
   ],
   "ui": {
