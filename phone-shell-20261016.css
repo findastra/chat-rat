@@ -1,0 +1,66 @@
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone,:is(#pet-open,#pet-chat,#tower-chat-launcher,button).astra-phone-launch{--neon:#d9e25a;--neon-ink:#0a0b05;--lcd:#c3d39b;--lcd-ink:#1f2b0e;--lcd-mid:#7d8f55;--f-pixel:"Silkscreen","IBM Plex Mono",ui-monospace,monospace;--f-lcd:"VT323","IBM Plex Mono",ui-monospace,monospace}
+:is(#pet-open,#pet-chat,#tower-chat-launcher,button).astra-phone-launch{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:76px;height:92px;border-radius:24px 24px 28px 28px;background:var(--neon);border:3px solid var(--neon-ink);box-shadow:0 0 0 3px var(--neon),0 0 10px color-mix(in srgb,var(--neon) 18%,transparent);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:0}
+:is(#pet-open,#pet-chat,#tower-chat-launcher,button).astra-phone-launch::before{content:"";position:absolute;top:-14px;left:14px;width:8px;height:12px;background:var(--neon);border:3px solid var(--neon-ink);border-bottom:0;border-radius:5px 5px 0 0}
+:is(#pet-open,#pet-chat,#tower-chat-launcher,button).astra-phone-launch canvas{width:52px;height:39px;image-rendering:pixelated;background:var(--lcd);border:3px solid var(--neon-ink);border-radius:9px}
+:is(#pet-open,#pet-chat,#tower-chat-launcher,button).astra-phone-launch .lbl{font:700 10px/1 var(--f-pixel);color:var(--neon-ink);letter-spacing:.12em}
+:is(#pet-open,#pet-chat,#tower-chat-launcher,button).astra-phone-launch .badge{position:absolute;top:-10px;right:-10px;background:var(--neon-ink);color:var(--neon);font:700 11px/1 var(--f-pixel);border-radius:999px;padding:5px 7px;border:2px solid var(--neon)}
+:is(#pet-open,#pet-chat,#tower-chat-launcher,button).astra-phone-launch:hover{transform:translateY(-2px)}
+:is(#pet-open,#pet-chat,#tower-chat-launcher,button).astra-phone-launch:focus-visible,:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone button:focus-visible,:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone input:focus-visible{outline:3px solid var(--neon-ink);outline-offset:2px}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:41;width:min(400px,calc(100vw - 32px));height:min(680px,calc(100vh - 120px));height:min(680px,calc(100dvh - 120px));background:var(--neon);border:3px solid var(--neon-ink);border-radius:34px 34px 40px 40px;box-shadow:0 0 0 3px var(--neon),0 0 12px color-mix(in srgb,var(--neon) 15%,transparent);display:flex;flex-direction:column;padding:14px 14px 16px;gap:10px;color:var(--neon-ink)}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone::before{content:"";position:absolute;top:-18px;left:34px;width:10px;height:15px;background:var(--neon);border:3px solid var(--neon-ink);border-bottom:0;border-radius:6px 6px 0 0}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-head{display:flex;align-items:center;gap:10px}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-head b{font:700 18px/1 var(--f-pixel);letter-spacing:.08em}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-head span{font:400 10px/1.2 var(--f-pixel);letter-spacing:.06em;opacity:.75}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-x{margin-left:auto;width:30px;height:30px;border-radius:50%;background:var(--neon-ink);color:var(--neon);border:0;font:700 16px/1 var(--f-pixel);cursor:pointer}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .lcd{background:var(--lcd);border:3px solid var(--neon-ink);border-radius:16px;box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--lcd-ink) 12%,transparent);color:var(--lcd-ink)}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-screen{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center;padding:8px 12px}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-screen canvas{width:128px;height:96px;image-rendering:pixelated;display:block}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-stats{display:grid;gap:7px;font:700 11px/1 var(--f-pixel);letter-spacing:.06em}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pips{display:inline-flex;gap:3px;margin-left:6px;vertical-align:middle}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pips i{width:9px;height:9px;border:2px solid var(--lcd-ink);display:inline-block}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pips i.on{background:var(--lcd-ink)}
+#st-state{font:400 18px/1 var(--f-lcd);letter-spacing:0}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-log{flex:1;min-height:0;overflow:auto;padding:10px 12px;font:20px/1.12 var(--f-lcd);display:flex;flex-direction:column;gap:8px}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pm{white-space:pre-wrap;overflow-wrap:anywhere;max-width:92%}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pm.bot::before{content:"CHIP> ";color:var(--lcd-mid)}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pm.me{align-self:flex-end;background:var(--lcd-ink);color:var(--lcd);padding:4px 9px;border-radius:10px 10px 2px 10px}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pm.sys{color:var(--lcd-mid);font-size:17px}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-quick{display:flex;gap:6px;flex-wrap:wrap}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-quick button{background:var(--neon-ink);color:var(--neon);border:0;border-radius:999px;padding:7px 10px;font:700 9.5px/1 var(--f-pixel);letter-spacing:.06em;cursor:pointer}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-quick button:hover{background:#2a2d12}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-in{display:flex;gap:8px}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-in input{flex:1;min-width:0;background:#eef0cf;color:var(--neon-ink);border:3px solid var(--neon-ink);border-radius:12px;padding:6px 10px;font:20px/1 var(--f-lcd)}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-in button{background:var(--neon-ink);color:var(--neon);border:0;border-radius:12px;padding:0 14px;font:700 11px/1 var(--f-pixel);letter-spacing:.08em;cursor:pointer}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-tabs{display:flex;gap:6px}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-tabs button{flex:1;background:transparent;color:var(--neon-ink);border:3px solid var(--neon-ink);border-radius:10px;padding:7px 0;font:700 10px/1 var(--f-pixel);letter-spacing:.08em;cursor:pointer}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-tabs button[aria-pressed="true"]{background:var(--neon-ink);color:var(--neon)}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pet-goals{flex:1;min-height:0;overflow:auto;padding:8px 12px}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pg-h{font:700 10px/1 var(--f-pixel);letter-spacing:.1em;margin:12px 0 4px;color:var(--lcd-mid)}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pg{display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;padding:7px 0;border-bottom:2px dotted color-mix(in srgb,var(--lcd-ink) 28%,transparent)}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pg:last-child{border-bottom:0}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pg .bx{width:14px;height:14px;border:2px solid var(--lcd-ink);margin-top:3px}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pg.done .bx{background:var(--lcd-ink)}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pg .t{font:20px/1.05 var(--f-lcd);overflow-wrap:anywhere}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pg.done .t{text-decoration:line-through;opacity:.6}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pg .pgm{font:16px/1.1 var(--f-lcd);color:var(--lcd-mid);overflow-wrap:anywhere}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pg-btns{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pg-btns button{background:var(--lcd-ink);color:var(--lcd);border:0;border-radius:6px;padding:5px 8px;font:700 9px/1 var(--f-pixel);letter-spacing:.06em;cursor:pointer}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .pg-btns button[disabled]{opacity:.5}
+
+:is(#pet-open,#pet-chat,#tower-chat-launcher,button).astra-phone-launch{inset:auto 18px 18px auto!important;min-width:0;box-sizing:border-box!important;transform:none!important;perspective:none!important}
+:is(#pet-open,#pet-chat,#tower-chat-launcher,button).astra-phone-launch img{width:52px!important;height:39px!important;object-fit:contain;image-rendering:pixelated;background:var(--lcd);border:3px solid var(--neon-ink);border-radius:9px;box-sizing:content-box}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone{inset:auto 18px 18px auto!important;margin:0!important;max-height:calc(100dvh - 60px);box-sizing:border-box!important;overflow:visible!important;text-align:left}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone:not([open])[role=dialog],dialog:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone:not([open]),:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone[hidden]{display:none!important}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone h2{font:700 18px/1.15 var(--f-pixel);color:var(--neon-ink);margin:0}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone p{font:18px/1.2 var(--f-lcd);color:var(--lcd-ink)}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone .phone-display{flex:1;overflow:auto;padding:12px;min-height:0}
+:is(#tower-chat,#pet,#cyber-deck,#astra-phone-chat).astra-phone::backdrop{background:#10150533}
+:is(#pet-open,#pet-chat,#tower-chat-launcher,button).astra-phone-launch .badge:empty{display:none}
+#coin-pause{display:none!important}
+:is(#pet-open,#pet-chat,#tower-chat-launcher,button).astra-phone-launch[hidden]{display:none!important}
+.astra-common{background:linear-gradient(180deg,transparent,#f4f8ff 70px);color:#49394f;margin-top:40px;padding:36px 20px 22px;border-radius:24px;display:grid;gap:24px}
+.astra-common>section{max-width:900px;width:100%;margin:auto;text-align:center}
+.astra-common h2{font:600 12px/1.4 system-ui;letter-spacing:.14em;text-transform:uppercase;color:#735773}
+.astra-common button,.astra-common summary{background:#efc8e3;border:1px solid #bb8db0;border-radius:22px;color:#57324e;padding:10px 18px;margin:6px;cursor:pointer;font:14px system-ui}
+.astra-common p{font:13px/1.6 system-ui}.astra-common textarea{box-sizing:border-box;width:100%;min-height:70px;background:#fff;color:#382a3d;border:1px solid #c9b8ce;border-radius:12px;padding:12px}
+.astra-tutorials{border:1px solid #c7a5c4;border-radius:20px;padding:18px;box-sizing:border-box}

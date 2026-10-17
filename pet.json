@@ -3,21 +3,48 @@
   "kind": "pet-app",
   "owner": "Astra",
   "sprite": "sprite-20261009.json",
-  "icon": "icon-20261009.png",
+  "icon": "desktop-art/chat-rat/idle-20261011.png",
   "asset_date": "20261009",
-  "job": "Files every chat Astra has with Claude or OpenAI into one shared folder, with an index every assistant can read.",
-  "runs_on": "Windows, Node 20+ (planned).",
-  "entry": "chat-rat-20261009.html",
-  "status": "hatching",
-  "visibility": "private",
-  "implementation_status": "Seeded: draft pet art, app icon and the build plan (handoffs/001). No app yet.",
+  "job": "Saves local AI conversations and imported exports by recorded model and YYYYMMDD, with direct folder buttons.",
+  "runs_on": "Windows, Node.js 20+",
+  "entry": "chat-rat-20261016.html",
+  "status": "growing",
+  "visibility": "public",
+  "implementation_status": "Local saver and dashboard implemented; web exports supported; live Pet Program harness adapters pending.",
   "cage": {
     "topic": "pet-app",
     "home": "README.md",
-    "repository": "https://github.com/findastra/astras-pet-apps"
+    "repository": "https://github.com/findastra/astras-pet-apps",
+    "submit": {
+      "date": "2026-10-16",
+      "job": "Saves local AI conversations and imported exports by recorded model and YYYYMMDD, with direct folder buttons.",
+      "status": "growing"
+    }
   },
   "built_with": "Claude Opus 5.5 (claude-opus-5-5), 2026-10-09: repo, plan, pet art and app icon; OpenAI Codex (GPT-6), 2026-10-11",
-  "updated": "2026-10-09",
+  "updated": "2026-10-16",
   "desktop_pet": "desktop-pet-20261011.json",
-  "desktop_art_built_with": "OpenAI Codex (GPT-6), built-in imagegen and native renderer, 2026-10-11"
+  "desktop_art_built_with": "OpenAI Codex (GPT-6), built-in imagegen and native renderer, 2026-10-11",
+  "framework": {
+    "version": "20261016",
+    "status": "partial",
+    "limits": "Standalone archive tool; core permissions, shared backlog and harness connections pending."
+  },
+  "tools": [
+    {
+      "name": "chat-rat-v0.1.0-save-missing-v0.1.0",
+      "intended_use": "Archive local and exported conversations",
+      "visibility": "private",
+      "entry": "chat-rat-20261016.mjs",
+      "skill": "skills/save-chats/SKILL.md"
+    }
+  ],
+  "ui": {
+    "cyberhome": "pet-program-cyberhome",
+    "cyberdeck": "pet-program-cyberdeck",
+    "launcher": "circle-arrow-right",
+    "character": "desktop-art/chat-rat/idle-20261011.png",
+    "chat_shell": "phone-shell-20261016.css",
+    "chat_connection": "disconnected"
+  }
 }
