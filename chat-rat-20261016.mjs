@@ -9,6 +9,8 @@ import {inflateRawSync} from 'node:zlib';
 import http from 'node:http';
 import {spawn} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
+import {parseArgs} from 'node:util';
+import {ask,format,listTools,buildWordIndex} from './chat-rat-query-20261017.mjs';
 
 export const ROOT = path.dirname(fileURLToPath(import.meta.url));
 export const VERSION = '0.1.0';
@@ -114,13 +116,28 @@ export async function startServer(cfg=settings(),port=43127) {
   if(req.headers['x-chat-rat-token']!==token|| (req.headers.origin&&req.headers.origin!==origin))return send(403,{error:'Open Chat Rat locally to use this action.'});
   if(req.method==='GET'&&url.pathname==='/api/status'){const data=await json(path.join(cfg.library,`chat-index-${CONTROL}.json`),{chats:[],report:null});return send(200,{...data,library:cfg.library,busy,enabled});}
   if(req.method==='GET'&&url.pathname==='/api/chat'){const state=await json(path.join(cfg.library,`chat-index-${CONTROL}.json`),{chats:[]});const chat=state.chats.find(c=>c.id===url.searchParams.get('id'));if(!chat)return send(404,{error:'Unknown chat.'});return send(200,{text:await fs.readFile(path.join(cfg.library,chat.files[0]),'utf8')});}
+  if(req.method==='GET'&&url.pathname==='/api/query'){const q=url.searchParams.get('q')||'';if(!q.trim())return send(400,{error:'Ask with ?q=your question.'});const also=url.searchParams.getAll('also');return send(200,await ask(cfg,q,{also,name:url.searchParams.get('tool')||undefined,limit:Math.min(20,Number(url.searchParams.get('limit'))||5),from:url.searchParams.get('from')||undefined,to:url.searchParams.get('to')||undefined}));}
+  if(req.method==='GET'&&url.pathname==='/api/tools')return send(200,{tools:await listTools(cfg)});
   if(req.method==='POST'&&url.pathname==='/api/power'){enabled=url.searchParams.get('on')==='true';if(!enabled)controller?.abort();return send(200,{enabled});}
-  if(req.method==='POST'&&url.pathname==='/api/save'){if(!enabled)return send(409,{error:'Save tool is OFF.'});if(busy)return send(409,{error:'A save is already running.'});busy=true;controller=new AbortController();try{return send(200,await indexChats(cfg,controller.signal));}finally{busy=false;}}
+  if(req.method==='POST'&&url.pathname==='/api/save'){if(!enabled)return send(409,{error:'Save tool is OFF.'});if(busy)return send(409,{error:'A save is already running.'});busy=true;controller=new AbortController();try{const report=await indexChats(cfg,controller.signal);await buildWordIndex(cfg);return send(200,report);}finally{busy=false;}}
   if(req.method==='POST'&&url.pathname==='/api/folder'){await fs.mkdir(cfg.library,{recursive:true});const relative=url.searchParams.get('folder')||'';const data=await json(path.join(cfg.library,`chat-index-${CONTROL}.json`),{chats:[]});const allowed=new Set(['','inbox',...data.chats.flatMap(c=>c.files.flatMap(f=>[path.dirname(f),slug(c.models.find(m=>f.startsWith(slug(m)+path.sep))||'unknown')]))]);if(!allowed.has(relative))return send(403,{error:'Unknown archive folder.'});await fs.mkdir(path.join(cfg.library,relative),{recursive:true});await openFolder(relative);return send(200,{opened:true});}
   return send(404,{error:'Not found.'});
  }catch(e){send(500,{error:e.message});}});
  await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(port,'127.0.0.1',resolve);});return {server,url:origin};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
- const command=process.argv[2]||'serve';try{if(command==='index')console.log(JSON.stringify(await indexChats(),null,2));else if(command==='serve'){const {url}=await startServer();console.log('Chat Rat: '+url);}else throw Error('Use serve or index.');}catch(e){console.error(e.message);process.exitCode=1;}
+ const command=process.argv[2]||'serve';try{
+  if(command==='index'){const report=await indexChats();await buildWordIndex(settings());console.log(JSON.stringify(report,null,2));}
+  else if(command==='serve'){const {url}=await startServer();console.log('Chat Rat: '+url);}
+  else if(command==='ask'){
+   const {values,positionals}=parseArgs({args:process.argv.slice(3),allowPositionals:true,options:{also:{type:'string',multiple:true},tool:{type:'string'},limit:{type:'string'},from:{type:'string'},to:{type:'string'},pin:{type:'string',multiple:true},json:{type:'boolean'},'no-save':{type:'boolean'}}});
+   const question=positionals.join(' ');if(!question.trim())throw Error('Usage: ask "your question" [--also word] [--tool name] [--limit 5] [--from YYYYMMDD] [--to YYYYMMDD] [--pin chatId] [--no-save] [--json]');
+   const cfg=settings();
+   if(!values['no-save'])try{const r=await indexChats(cfg);console.error(`Saved missing chats first: ${r.added} added, ${r.updated} updated.`);}catch(e){console.error('Could not save new chats first ('+e.message+'). Answering from the archive as it is.');}
+   const answer=await ask(cfg,question,{also:(values.also||[]).flatMap(a=>a.split(',')),name:values.tool,limit:Number(values.limit)||5,from:values.from,to:values.to,pin:values.pin||[]});
+   console.log(values.json?JSON.stringify(answer,null,2):format(answer));
+  }
+  else if(command==='tools'){for(const t of await listTools(settings()))console.log(`${t.name} · ${t.uses} uses · last ${t.lastUsed||'never'} · ${t.terms.join(', ')}`);}
+  else throw Error('Use serve, index, ask or tools.');
+ }catch(e){console.error(e.message);process.exitCode=1;}
 }
