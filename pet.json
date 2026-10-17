@@ -14,7 +14,7 @@
   "cage": {
     "topic": "pet-app",
     "home": "README.md",
-    "repository": "https://github.com/findastra/astras-pet-apps"
+    "repository": "https://github.com/findastra/astras-pet-os"
   },
   "built_with": "Claude Opus 5.5 (claude-opus-5-5), 2026-10-09: repo, plan, pet art and app icon; OpenAI Codex (GPT-6), 2026-10-11",
   "updated": "2026-10-09",

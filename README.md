@@ -11,3 +11,11 @@ Chat Rat files every conversation Astra has with Claude or OpenAI (Claude Code, 
 Seeded only: pet art (nine moods, **draft** until Astra approves it), app icon, and the plan in [card 001](handoffs/001-any-build-chat-rat-v0.md). The app is **not built yet**.
 
 Desktop appearance draft updated 2026-10-11: see [desktop details](desktop-pet-20261011.json). This changes the desktop pet, not application features.
+
+## Limits
+
+What is not done, plainly. From the hub's [intelligence levels](https://github.com/findastra/astras-pet-os/blob/main/INTELLIGENCE-LEVELS.md) (checked 2026-10-17):
+
+- **Program (L1/L2):** — **Made by Astra:** *Chat Nest* (not built; the repo has art only)
+- **Runtime (L2):** — **Should:** make sure every conversation Astra has with any agent (Claude, Codex, ChatGPT) is logged on the PC
+- **Agentic harness (L3):** — not built yet
